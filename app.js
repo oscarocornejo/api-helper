@@ -21,7 +21,7 @@ Promise
         for(let i = 0; i < apiFiles.length; i++) {
             const { get, post } = require(path.resolve(__dirname, `src/api/${apiFiles[i]}`));
             app.post(apiNames[i], post);
-            app.post(apiNames[i], get);
+            app.get(apiNames[i], get);
         }
         app.listen(PORT, () => {
             console.log(`Server started on port: ${PORT}`);
